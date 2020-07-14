@@ -7,8 +7,21 @@ import java.util.List;
  * @author lichunfeng
  */
 public class Dept {
+    /**
+     * 部门名称
+     */
     private String name;
+    /**
+     * 部门名称
+     */
+    private String salesRul;
+    /**
+     * 提成金额区间
+     */
     private List<BigDecimal> salesRules;
+    /**
+     * 提成点数区间
+     */
     private List<BigDecimal> royaltyRules;
 
     public String getName() {
@@ -33,5 +46,13 @@ public class Dept {
 
     public void setRoyaltyRules(List<BigDecimal> royaltyRules) {
         this.royaltyRules = royaltyRules;
+    }
+
+    public String getSalesRul() {
+        return salesRul;
+    }
+
+    public void setSalesRul(String salesRul) {
+        this.salesRul = salesRul;
     }
 }
