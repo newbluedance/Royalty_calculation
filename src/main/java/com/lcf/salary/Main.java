@@ -25,8 +25,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             String pathUrl = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+            int lastIndexOf = pathUrl.lastIndexOf("/");
+            pathUrl=pathUrl.substring(0,lastIndexOf+1);
             DIR_PATH = URLDecoder.decode(pathUrl, "utf-8");
-
         } catch (Exception e) {
             DIR_PATH = "D:/salary/";
         }
@@ -267,7 +268,7 @@ public class Main {
                         return dept;
                     }
                 } else if (dept.getSalesRul().contains("+")) {
-                    String rnum = dept.getSalesRul().replace("\\+", "");
+                    String rnum = dept.getSalesRul().replace("+", "");
                     if (sum >= Double.parseDouble(rnum)) {
                         return dept;
                     }
